@@ -6,8 +6,5 @@ exports.getAllUser = (req, res) => {
         const post =  getPostByUserId(user.id);
         return {...user, post}
     });
-
-    console.log(allUser)
-
     return allUser   
 }

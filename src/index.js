@@ -1,11 +1,12 @@
 const express = require("express")
+require("dotenv").config()
 const router = require("./routes")
 
+
 const app = express()
-
 app.use(express.json())
-app.use(router)
+app.use("/api",router)
 
-app.listen(3000, ()=>{
-    console.log("server is running on 3000...")
+app.listen(process.env.PORT, ()=>{
+    console.log(`server is running on ${process.env.PORT}...`)
 })
